@@ -1,0 +1,44 @@
+.icon-48-propertyrecords {
+      background-image: url(../images/l_propertyrecords.png);
+      padding-left:60px!important;
+}
+
+.icon-48-propertyrecord {
+      background-image: url(../images/l_propertyrecords.png);
+      padding-left:60px!important;
+}
+
+.color-box-propertyrecords { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-towns {
+      background-image: url(../images/l_towns.png);
+      padding-left:60px!important;
+}
+
+.icon-48-town {
+      background-image: url(../images/l_towns.png);
+      padding-left:60px!important;
+}
+
+.color-box-towns { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+.icon-48-parishes {
+      background-image: url(../images/l_parishes.png);
+      padding-left:60px!important;
+}
+
+.icon-48-parish {
+      background-image: url(../images/l_parishes.png);
+      padding-left:60px!important;
+}
+
+.color-box-parishes { 
+      float: left;      width: 15px;      height: 15px;      margin-right: 5px;      border: 1px solid rgba(0, 0, 0, .2);}
+
+
+
+.other-filters{
+    padding: 0 14px;
+}

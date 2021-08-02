@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<component>
+  <table action="add" table_name="#__xws_property_towns" storage_engine="" collation="utf8mb4_unicode_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="name" field_type="VARCHAR" field_length="255" description=""/>
+  </table>
+  <table action="add" table_name="#__xws_property_parishes" storage_engine="" collation="utf8mb4_unicode_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="name" field_type="VARCHAR" field_length="255" description=""/>
+  </table>
+  <table action="change" old_name="#__xws_pp_records" new_name="#__xws_property_records" table_name="#__xws_property_records" storage_engine="" collation="utf8mb4_unicode_ci">
+    <field field_name="id" field_type="INT" field_length="11" is_autoincrement="1" index="primary" description=""/>
+    <field field_name="ordering" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="state" field_type="TINYINT" field_length="1" index="index" description=""/>
+    <field field_name="checked_out" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="checked_out_time" field_type="DATETIME" description=""/>
+    <field field_name="created_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field field_name="modified_by" field_type="INT" field_length="11" index="index" description=""/>
+    <field action="change" field_name="houseno" field_type="INT" field_length="3" description=""/>
+    <field field_name="housename" field_type="VARCHAR" field_length="255" description=""/>
+    <field field_name="streetname" field_type="VARCHAR" field_length="255" description=""/>
+    <field field_name="streetname2" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="change" field_name="town" field_type="INT" default="0" field_length="11" description=""/>
+    <field field_name="postcode" field_type="VARCHAR" field_length="255" description=""/>
+    <field action="change" field_name="parish" field_type="VARCHAR" default="0" field_length="255" description=""/>
+    <field action="change" field_name="marketvalue" field_type="DECIMAL" field_length="15,2" description=""/>
+    <field action="change" field_name="saleprice" field_type="DECIMAL" field_length="15,2" description=""/>
+    <field field_name="aquireddate" field_type="DATETIME" description=""/>
+    <field action="add" field_name="completeddate" field_type="DATETIME" description=""/>
+    <field field_name="hash" field_type="VARCHAR" field_length="255" description=""/>
+  </table>
+</component>

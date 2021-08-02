@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="4.0" method="upgrade" client="site">
+    <name>MOD_XWS_PROPERTY_NAME</name>
+    <creationDate>2021-08-02</creationDate>
+    <copyright>2021 Tony Partridge - Xtech Web Services Ltd</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Tony Partridge</author>
+    <authorEmail>tony@xws.im</authorEmail>
+    <authorUrl>https://www.xws.im</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>MOD_XWS_PROPERTY_DESCRIPTION</description>
+    <namespace path="src">Propertyprices\Module\Xws_property</namespace>
+    
+    <files>
+        <filename module="mod_xws_property">mod_xws_property.php</filename>
+        <filename>index.html</filename>
+        <folder>src</folder>
+        <folder>tmpl</folder>
+    </files>
+    <media destination="mod_xws_property" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+        <filename>joomla.asset.json</filename>
+    </media>
+    <languages folder="language">
+        
+			<language tag="en-GB">en-GB/mod_xws_property.ini</language>
+			<language tag="en-GB">en-GB/mod_xws_property.sys.ini</language>
+    </languages>
+    <config>
+        <fields name="params">
+            <fieldset 
+                name="content_type" 
+                label="MOD_XWS_PROPERTY_CONTENT_TYPE_TAB_LBL"
+                description="MOD_XWS_PROPERTY_CONTENT_TYPE_TAB_DESC">
+                <field
+                    name="content_type" type="list"
+                    label="MOD_XWS_PROPERTY_CONTENT_TYPE_LBL"
+                    description="MOD_XWS_PROPERTY_CONTENT_TYPE_DESC">
+                    <option value="blank">MOD_XWS_PROPERTY_CUSTOM_CONTENT</option>
+                    <option value="list">MOD_XWS_PROPERTY_LIST</option>
+                    <option value="item">MOD_XWS_PROPERTY_ITEM</option>
+                </field>
+            </fieldset>
+            <fieldset 
+                name="blank_content" 
+                label="MOD_XWS_PROPERTY_CUSTOM_CONTENT_TAB_LBL"
+                description="MOD_XWS_PROPERTY_CUSTOM_CONTENT_TAB_DESC">
+                <field 
+                    name="html_content" type="editor" filter="safehtml"
+                    label="MOD_XWS_PROPERTY_HTML_LBL"
+                    description="MOD_XWS_PROPERTY_HTML_DESC" />
+            </fieldset>
+            <fieldset 
+                name="list_content" 
+                label="MOD_XWS_PROPERTY_LIST_CONTENT_TAB_LBL"
+                description="MOD_XWS_PROPERTY_LIST_CONTENT_TAB_DESC">
+                <field
+                    name="table" type="list"
+                    label="MOD_XWS_PROPERTY_TABLE_LBL"
+                    description="MOD_XWS_PROPERTY_TABLE_DESC">
+                    
+	<option value="#__xws_property_records">#__xws_property_records</option>
+	<option value="#__xws_property_towns">#__xws_property_towns</option>
+	<option value="#__xws_property_parishes">#__xws_property_parishes</option>
+                </field>
+                <field 
+                    name="field" type="groupedlist" default=""
+                    label="MOD_XWS_PROPERTY_FIELD_LBL"
+                    description="MOD_XWS_PROPERTY_FIELD_DESC">
+                    
+	<group label="#__xws_property_records">
+		<option value="#__xws_property_records:id">id</option>
+		<option value="#__xws_property_records:created_by">created_by</option>
+		<option value="#__xws_property_records:modified_by">modified_by</option>
+		<option value="#__xws_property_records:parish">parish</option>
+		<option value="#__xws_property_records:houseno">houseno</option>
+		<option value="#__xws_property_records:housename">housename</option>
+		<option value="#__xws_property_records:streetname">streetname</option>
+		<option value="#__xws_property_records:streetname2">streetname2</option>
+		<option value="#__xws_property_records:town">town</option>
+		<option value="#__xws_property_records:postcode">postcode</option>
+		<option value="#__xws_property_records:marketvalue">marketvalue</option>
+		<option value="#__xws_property_records:saleprice">saleprice</option>
+		<option value="#__xws_property_records:aquireddate">aquireddate</option>
+		<option value="#__xws_property_records:completeddate">completeddate</option>
+		<option value="#__xws_property_records:hash">hash</option>
+	</group>
+	<group label="#__xws_property_towns">
+		<option value="#__xws_property_towns:id">id</option>
+		<option value="#__xws_property_towns:created_by">created_by</option>
+		<option value="#__xws_property_towns:modified_by">modified_by</option>
+		<option value="#__xws_property_towns:name">name</option>
+	</group>
+	<group label="#__xws_property_parishes">
+		<option value="#__xws_property_parishes:id">id</option>
+		<option value="#__xws_property_parishes:created_by">created_by</option>
+		<option value="#__xws_property_parishes:modified_by">modified_by</option>
+		<option value="#__xws_property_parishes:name">name</option>
+	</group>
+                </field>
+                <field 
+                    name="offset" type="text" default="0" filter="uint" class="input-small"
+                    label="MOD_XWS_PROPERTY_OFFSET_LBL"
+                    description="MOD_XWS_PROPERTY_OFFSET_DESC" />
+                <field 
+                    name="limit" type="text" default="10" filter="uint" class="input-small"
+                    label="MOD_XWS_PROPERTY_LIMIT_LBL"
+                    description="MOD_XWS_PROPERTY_LIMIT_DESC" />
+            </fieldset>
+            <fieldset 
+                name="item_content" 
+                label="MOD_XWS_PROPERTY_ITEM_CONTENT_TAB"
+                description="MOD_XWS_PROPERTY_ITEM_CONTENT_TAB_DESC">
+                <field
+                    name="item_table" type="list"
+                    label="MOD_XWS_PROPERTY_TABLE_LBL"
+                    description="MOD_XWS_PROPERTY_TABLE_DESC">
+                    
+	<option value="#__xws_property_records">#__xws_property_records</option>
+	<option value="#__xws_property_towns">#__xws_property_towns</option>
+	<option value="#__xws_property_parishes">#__xws_property_parishes</option>
+                </field>
+                <field 
+                    name="item_id" type="text" filter="uint" class="input-small"
+                    label="MOD_XWS_PROPERTY_ITEM_ID_LBL"
+                    description="MOD_XWS_PROPERTY_ITEM_ID_DESC"
+                />
+            </fieldset>
+        </fields>
+    </config>
+</extension>

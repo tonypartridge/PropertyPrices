@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="4.0" type="plugin" group="webservices">
+    <name>plg_webservices_xws_property</name>
+    <author>Tony Partridge</author>
+    <creationDate>2021-08-02</creationDate>
+    <copyright>2021 Tony Partridge - Xtech Web Services Ltd</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <authorEmail>tony@xws.im</authorEmail>
+    <authorUrl>https://www.xws.im</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>PLG_PRIVACY_COM_XWS_PROPERTY_XML_DESCRIPTION</description>
+    <files>
+        <filename plugin="xws_property">xws_property.php</filename>
+        <filename>index.html</filename>
+    </files>
+    <languages folder="languages">
+        
+			<language tag="en-GB">en-GB/plg_webservices_xws_property.ini</language>
+			<language tag="en-GB">en-GB/plg_webservices_xws_property.sys.ini</language>
+    </languages>
+    <config>
+    </config>
+</extension>

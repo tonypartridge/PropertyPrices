@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="4.0" method="upgrade">
+    <name>com_xws_property</name>
+    <creationDate>2021-08-02</creationDate>
+    <copyright>2021 Tony Partridge - Xtech Web Services Ltd</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+    <author>Tony Partridge</author>
+    <authorEmail>tony@xws.im</authorEmail>
+    <authorUrl>https://www.xws.im</authorUrl>
+    <version>CVS: 1.0.0</version>
+    <description>COM_XWS_PROPERTY_XML_DESCRIPTION</description>
+    <namespace path="src">Propertyprices\Component\Xws_property</namespace>
+    
+    <scriptfile>script.php</scriptfile>
+    
+    <install> <!-- Runs on install -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+        </sql>
+    </install>
+    <update> <!-- Runs on update -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/update.mysql.utf8.sql</file>
+        </sql>
+    </update>
+    <uninstall> <!-- Runs on uninstall -->
+        <sql>
+            <file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+        </sql>
+    </uninstall>
+
+    <api>
+		<files folder="webservices">
+			<folder>src</folder>
+		</files>
+	</api>
+
+    <files folder="site">
+        <folder>src</folder>
+        <folder>forms</folder>
+        <folder>tmpl</folder>
+    </files>
+    <media destination="com_xws_property" folder="media">
+        <folder>css</folder>
+        <folder>js</folder>
+        <filename>joomla.asset.json</filename>
+    </media>
+    <languages folder="site/languages">
+        
+			<language tag="en-GB">en-GB/com_xws_property.ini</language>
+    </languages>
+    <administration>
+        <menu>COM_XWS_PROPERTY</menu>
+        <submenu>
+            
+			<menu link="option=com_xws_property&amp;view=propertyrecords" view="propertyrecords" alt="Xws_property/Propertyrecords">COM_XWS_PROPERTY_TITLE_PROPERTYRECORDS</menu>
+
+			<menu link="option=com_xws_property&amp;view=towns" view="towns" alt="Xws_property/Towns">COM_XWS_PROPERTY_TITLE_TOWNS</menu>
+
+			<menu link="option=com_xws_property&amp;view=parishes" view="parishes" alt="Xws_property/Parishes">COM_XWS_PROPERTY_TITLE_PARISHES</menu>
+
+        </submenu>
+        <files folder="administrator">
+            <filename>access.xml</filename>
+            <filename>config.xml</filename>
+            <folder>forms</folder>
+            <folder>src</folder>
+            <folder>tmpl</folder>
+            <folder>services</folder>
+            <folder>presets</folder>
+            <folder>sql</folder>
+        </files>
+        <languages folder="administrator/languages">
+            
+			<language tag="en-GB">en-GB/com_xws_property.ini</language>
+			<language tag="en-GB">en-GB/com_xws_property.sys.ini</language>
+        </languages>
+    </administration>
+    <config>
+        <fields name="params">
+            <fieldset name="component">
+                <field name="save_history" default="0" />
+            </fieldset>
+        </fields>
+    </config>
+    <plugins>
+		<plugin group="finder" plugin="xws_propertypropertyrecords"/>
+		<plugin group="webservices" plugin="xws_property"/>
+    </plugins>
+    <modules>
+		<module module="mod_xws_property" />
+	</modules>
+</extension>
+<!-- Component built by the Joomla Component Creator -->
+<!-- http://www.component-creator.com/ -->

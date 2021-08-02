@@ -1,0 +1,18 @@
+{
+  "$schema": "https://developer.joomla.org/schemas/json-schema/web_assets.json",
+  "name": "mod_xws_property",
+  "version": "CVS: 1.0.0",
+  "license": "GNU General Public License version 2 or later; see LICENSE.txt",
+  "assets": [
+    {
+      "name": "mod_xws_property.style",
+      "type": "style",
+      "uri": "mod_xws_property/style.css"
+    },
+    {
+      "name": "mod_xws_property.script",
+      "type": "script",
+      "uri": "mod_xws_property/script.js"
+    }
+  ]
+}
