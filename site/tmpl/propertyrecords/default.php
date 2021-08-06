@@ -174,12 +174,12 @@ $formatter = new NumberFormatter('en_GB',  NumberFormatter::CURRENCY);
                 </td>
 				<td>
 					<?php
-                    echo $formatter->formatCurrency($item->marketvalue, 'GBP'), PHP_EOL;
+                    echo str_replace('.00', '', $formatter->formatCurrency($item->marketvalue, 'GBP')), PHP_EOL;
                     ?>
 				</td>
 				<td>
 					<?php
-                    echo $formatter->formatCurrency($item->saleprice, 'GBP'), PHP_EOL;
+                    echo str_replace('.00', '', $formatter->formatCurrency($item->saleprice, 'GBP')), PHP_EOL;
                     ?>
 				</td>
 				<td>

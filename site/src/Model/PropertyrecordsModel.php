@@ -92,7 +92,7 @@ class PropertyrecordsModel extends ListModel
 		$ordering = $app->getUserStateFromRequest($this->context . '.filter_order', 'filter_order', $app->get('filter_order'));
 		if (!in_array($ordering, $this->filter_fields))
 		{
-		$ordering = 'id';
+		$ordering = 'completeddate';
 		}
 		$this->setState('list.ordering', $ordering);
 		}
@@ -229,7 +229,7 @@ class PropertyrecordsModel extends ListModel
             
             
             // Add the list ordering clause.
-            $orderCol  = $this->state->get('list.ordering', 'completeddate');
+            $orderCol  = $this->state->get('list.ordering', 'id');
             $orderDirn = $this->state->get('list.direction', 'DESC');
 
             if ($orderCol && $orderDirn)
