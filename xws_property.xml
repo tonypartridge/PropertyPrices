@@ -34,7 +34,9 @@
 			<folder>src</folder>
 		</files>
 	</api>
-
+    <files target="cli">
+        <file>cli/property_price_import.php</file>
+    </files>
     <files folder="site">
         <folder>src</folder>
         <folder>forms</folder>
