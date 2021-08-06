@@ -87,7 +87,7 @@ class PropertyrecordsModel extends ListModel
 	protected function populateState($ordering = null, $direction = null)
 	{
         // List state information.
-        parent::populateState('id', 'DESC');
+        parent::populateState('completeddate', 'DESC');
 
         $context = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
         $this->setState('filter.search', $context);
@@ -231,7 +231,7 @@ class PropertyrecordsModel extends ListModel
 			$query->where("a.`completeddate` <= '".$db->escape($filter_completeddate_to)."'");
 		}
 		// Add the list ordering clause.
-		$orderCol  = $this->state->get('list.ordering', 'id');
+		$orderCol  = $this->state->get('list.ordering', 'completeddate');
 		$orderDirn = $this->state->get('list.direction', 'DESC');
 
 		if ($orderCol && $orderDirn)
