@@ -9,8 +9,6 @@
 <field name="aquireddate.to" label="COM_XWS_PROPERTY_PROPERTYRECORDS_AQUIREDDATE_FILTER_TO" type="calendar" onchange="this.form.submit();" filter="safehtml" class="inputbox" showtime="false" translateformat="false" hint="COM_XWS_PROPERTY_PROPERTYRECORDS_AQUIREDDATE_FILTER_TO"/>
 <field name="completeddate.from" label="COM_XWS_PROPERTY_PROPERTYRECORDS_COMPLETEDDATE_FILTER_FROM" type="calendar" onchange="this.form.submit();" filter="safehtml" class="inputbox" showtime="false" translateformat="false" hint="COM_XWS_PROPERTY_PROPERTYRECORDS_COMPLETEDDATE_FILTER_FROM"/>
 <field name="completeddate.to" label="COM_XWS_PROPERTY_PROPERTYRECORDS_COMPLETEDDATE_FILTER_TO" type="calendar" onchange="this.form.submit();" filter="safehtml" class="inputbox" showtime="false" translateformat="false" hint="COM_XWS_PROPERTY_PROPERTYRECORDS_COMPLETEDDATE_FILTER_TO"/>
-
-
     </fields>
     <fields name="list">
 

@@ -229,7 +229,7 @@ class PropertyrecordsModel extends ListModel
             
             
             // Add the list ordering clause.
-            $orderCol  = $this->state->get('list.ordering', 'id');
+            $orderCol  = $this->state->get('list.ordering', 'completeddate');
             $orderDirn = $this->state->get('list.direction', 'DESC');
 
             if ($orderCol && $orderDirn)

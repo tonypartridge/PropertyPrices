@@ -35,7 +35,11 @@ $canDelete  = $user->authorise('core.delete', 'com_xws_property');
 // Import CSS
 $wa = Factory::getApplication()->getDocument()->getWebAssetManager();
 $wa->useStyle('com_xws_property.list');
+
+$formatter = new NumberFormatter('en_GB',  NumberFormatter::CURRENCY);
 ?>
+
+    <div>Please note, the below data is imported directly from the Isle of Man Land registry report produced monthly. There are a lot of typos and we have tried out best to fix this where possible.</div>
 
 <form action="<?php echo htmlspecialchars(Uri::getInstance()->toString()); ?>" method="post"
       name="adminForm" id="adminForm">
@@ -45,33 +49,34 @@ $wa->useStyle('com_xws_property.list');
 	<table class="table table-striped" id="propertyrecordList">
 		<thead>
 		<tr>
-			<?php if (isset($this->items[0]->state)): ?>
-				<th width="5%">
-	<?php echo HTMLHelper::_('grid.sort', 'JPUBLISHED', 'a.state', $listDirn, $listOrder); ?>
-</th>
-			<?php endif; ?>
-
-							<th class=''>
-				<?php echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_ID', 'a.id', $listDirn, $listOrder); ?>
-				</th>
-				<th class=''>
-				<?php echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_HOUSENO', 'a.houseno', $listDirn, $listOrder); ?>
-				</th>
-				<th class=''>
-				<?php echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_HOUSENAME', 'a.housename', $listDirn, $listOrder); ?>
-				</th>
-				<th class=''>
-				<?php echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_STREETNAME', 'a.streetname', $listDirn, $listOrder); ?>
-				</th>
-				<th class=''>
-				<?php echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_STREETNAME2', 'a.streetname2', $listDirn, $listOrder); ?>
-				</th>
-				<th class=''>
-				<?php echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_TOWN', 'a.town', $listDirn, $listOrder); ?>
-				</th>
-				<th class=''>
-				<?php echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_POSTCODE', 'a.postcode', $listDirn, $listOrder); ?>
-				</th>
+            <th>Property</th>
+<!--			--><?php //if (isset($this->items[0]->state)): ?>
+<!--				<th width="5%">-->
+<!--	--><?php //echo HTMLHelper::_('grid.sort', 'JPUBLISHED', 'a.state', $listDirn, $listOrder); ?>
+<!--</th>-->
+<!--			--><?php //endif; ?>
+<!---->
+<!--							<th class=''>-->
+<!--				--><?php //echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_ID', 'a.id', $listDirn, $listOrder); ?>
+<!--				</th>-->
+<!--				<th class=''>-->
+<!--				--><?php //echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_HOUSENO', 'a.houseno', $listDirn, $listOrder); ?>
+<!--				</th>-->
+<!--				<th class=''>-->
+<!--				--><?php //echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_HOUSENAME', 'a.housename', $listDirn, $listOrder); ?>
+<!--				</th>-->
+<!--				<th class=''>-->
+<!--				--><?php //echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_STREETNAME', 'a.streetname', $listDirn, $listOrder); ?>
+<!--				</th>-->
+<!--				<th class=''>-->
+<!--				--><?php //echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_STREETNAME2', 'a.streetname2', $listDirn, $listOrder); ?>
+<!--				</th>-->
+<!--				<th class=''>-->
+<!--				--><?php //echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_TOWN', 'a.town', $listDirn, $listOrder); ?>
+<!--				</th>-->
+<!--				<th class=''>-->
+<!--				--><?php //echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_POSTCODE', 'a.postcode', $listDirn, $listOrder); ?>
+<!--				</th>-->
 				<th class=''>
 				<?php echo HTMLHelper::_('grid.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_MARKETVALUE', 'a.marketvalue', $listDirn, $listOrder); ?>
 				</th>
@@ -108,71 +113,86 @@ $wa->useStyle('com_xws_property.list');
 			
 			<tr class="row<?php echo $i % 2; ?>">
 
-				<?php if (isset($this->items[0]->state)) : ?>
-					<?php $class = ($canChange) ? 'active' : 'disabled'; ?>
-					<td class="center">
-	<a class="btn btn-micro <?php echo $class; ?>" href="<?php echo ($canChange) ? Route::_('index.php?option=com_xws_property&task=propertyrecord.publish&id=' . $item->id . '&state=' . (($item->state + 1) % 2), false, 2) : '#'; ?>">
-	<?php if ($item->state == 1): ?>
-		<i class="icon-publish"></i>
-	<?php else: ?>
-		<i class="icon-unpublish"></i>
-	<?php endif; ?>
-	</a>
-</td>
-				<?php endif; ?>
+<!--				--><?php //if (isset($this->items[0]->state)) : ?>
+<!--					--><?php //$class = ($canChange) ? 'active' : 'disabled'; ?>
+<!--					<td class="center">-->
+<!--	<a class="btn btn-micro --><?php //echo $class; ?><!--" href="--><?php //echo ($canChange) ? Route::_('index.php?option=com_xws_property&task=propertyrecord.publish&id=' . $item->id . '&state=' . (($item->state + 1) % 2), false, 2) : '#'; ?><!--">-->
+<!--	--><?php //if ($item->state == 1): ?>
+<!--		<i class="icon-publish"></i>-->
+<!--	--><?php //else: ?>
+<!--		<i class="icon-unpublish"></i>-->
+<!--	--><?php //endif; ?>
+<!--	</a>-->
+<!--</td>-->
+<!--				--><?php //endif; ?>
 
-								<td>
+<!--								<td>-->
+<!---->
+<!--					--><?php //echo $item->id; ?>
+<!--				</td>-->
+<!--				<td>-->
+<!---->
+<!--					--><?php //echo $item->houseno; ?>
+<!--				</td>-->
+<!--				<td>-->
+<!--				--><?php //$canCheckin = Factory::getUser()->authorise('core.manage', 'com_xws_property.' . $item->id) || $item->checked_out == Factory::getUser()->id; ?>
+<!--				--><?php //if($canCheckin && $item->checked_out > 0) : ?>
+<!---->
+<!--	<a href="--><?php //echo Route::_('index.php?option=com_xws_property&task=propertyrecord.checkin&id=' . $item->id .'&'. Session::getFormToken() .'=1'); ?><!--">					--><?php //echo HTMLHelper::_('jgrid.checkedout', $i, $item->uEditor, $item->checked_out_time, 'propertyrecord.', false); ?><!--</a>-->
+<!--				--><?php //endif; ?>
+<!--				<a href="--><?php //echo Route::_('index.php?option=com_xws_property&view=propertyrecord&id='.(int) $item->id); ?><!--">-->
+<!--				--><?php //echo $this->escape($item->housename); ?><!--</a>-->
+<!--				</td>-->
+<!--				<td>-->
+<!---->
+<!--					--><?php //echo $item->streetname; ?>
+<!--				</td>-->
+<!--				<td>-->
+<!---->
+<!--					--><?php //echo $item->streetname2; ?>
+<!--				</td>-->
+<!--				<td>-->
+<!---->
+<!--					--><?php //echo $item->town; ?>
+<!--				</td>-->
+<!--				<td>-->
+<!---->
+<!--					--><?php //echo $item->postcode; ?>
+<!--				</td>-->
+                <td>
+                    <?php
+                    $propertyParts = array();
+                    if(!empty($item->houseno) && $item->houseno !== 0) $propertyParts[] = $item->houseno;
+                    if(!empty($item->housename) && $item->housename !== 0) $propertyParts[] = $item->housename;
+                    if(!empty($item->streetname) && $item->streetname !== 0) $propertyParts[] = $item->streetname;
+                    if(!empty($item->streetname2) && $item->streetname2 !== 0) $propertyParts[] = $item->streetname2;
+                    if(!empty($item->town) && $item->town !== 0) $propertyParts[] = $item->town;
+                    if(!empty($item->postcode) && $item->postcode !== 0) $propertyParts[] = $item->postcode;
 
-					<?php echo $item->id; ?>
+                    echo implode(', ', $propertyParts);
+                    ?>
+                </td>
+				<td>
+					<?php
+                    echo $formatter->formatCurrency($item->marketvalue, 'GBP'), PHP_EOL;
+                    ?>
 				</td>
 				<td>
-
-					<?php echo $item->houseno; ?>
-				</td>
-				<td>
-				<?php $canCheckin = Factory::getUser()->authorise('core.manage', 'com_xws_property.' . $item->id) || $item->checked_out == Factory::getUser()->id; ?>
-				<?php if($canCheckin && $item->checked_out > 0) : ?>
-
-	<a href="<?php echo Route::_('index.php?option=com_xws_property&task=propertyrecord.checkin&id=' . $item->id .'&'. Session::getFormToken() .'=1'); ?>">					<?php echo HTMLHelper::_('jgrid.checkedout', $i, $item->uEditor, $item->checked_out_time, 'propertyrecord.', false); ?></a>
-				<?php endif; ?>
-				<a href="<?php echo Route::_('index.php?option=com_xws_property&view=propertyrecord&id='.(int) $item->id); ?>">
-				<?php echo $this->escape($item->housename); ?></a>
-				</td>
-				<td>
-
-					<?php echo $item->streetname; ?>
-				</td>
-				<td>
-
-					<?php echo $item->streetname2; ?>
-				</td>
-				<td>
-
-					<?php echo $item->town; ?>
-				</td>
-				<td>
-
-					<?php echo $item->postcode; ?>
-				</td>
-				<td>
-
-					<?php echo $item->marketvalue; ?>
-				</td>
-				<td>
-
-					<?php echo $item->saleprice; ?>
+					<?php
+                    echo $formatter->formatCurrency($item->saleprice, 'GBP'), PHP_EOL;
+                    ?>
 				</td>
 				<td>
 
 					<?php
 					$date = $item->aquireddate;
-					echo $date > 0 ? HTMLHelper::_('date', $date, Text::_('DATE_FORMAT_LC6')) : '-';
+					echo $date > 0 ? HTMLHelper::_('date', $item->aquireddate, 'd-m-Y') : '-';
 					?>				</td>
 				<td>
 
 					<?php
 					$date = $item->completeddate;
-					echo $date > 0 ? HTMLHelper::_('date', $date, Text::_('DATE_FORMAT_LC6')) : '-';
+					echo $date > 0 ? HTMLHelper::_('date', $item->completeddate, 'd-m-Y') : '-';
 					?>				</td>
 
 
@@ -199,7 +219,6 @@ $wa->useStyle('com_xws_property.list');
 	<input type="hidden" name="filter_order_Dir" value="<?php echo $listDirn; ?>"/>
 	<?php echo HTMLHelper::_('form.token'); ?>
 </form>
-
 <?php
     if($canDelete) {
         $wa->addInlineScript("
