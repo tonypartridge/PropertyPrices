@@ -41,25 +41,25 @@ class PropertyrecordsModel extends ListModel
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'a.`id`',
-				'ordering', 'a.`ordering`',
-				'state', 'a.`state`',
-				'created_by', 'a.`created_by`',
-				'modified_by', 'a.`modified_by`',
-				'parish', 'a.`parish`',
-				'houseno', 'a.`houseno`',
-				'housename', 'a.`housename`',
-				'streetname', 'a.`streetname`',
-				'streetname2', 'a.`streetname2`',
-				'town', 'a.`town`',
-				'postcode', 'a.`postcode`',
-				'marketvalue', 'a.`marketvalue`',
-				'saleprice', 'a.`saleprice`',
-				'aquireddate', 'a.`aquireddate`',
+				'id', 'a.id',
+				'ordering', 'a.ordering',
+				'state', 'a.state',
+				'created_by', 'a.created_by',
+				'modified_by', 'a.modified_by',
+				'parish', 'a.parish',
+				'houseno', 'a.houseno',
+				'housename', 'a.housename',
+				'streetname', 'a.streetname',
+				'streetname2', 'a.streetname2',
+				'town', 'a.town',
+				'postcode', 'a.postcode',
+				'marketvalue', 'a.marketvalue',
+				'saleprice', 'a.saleprice',
+				'aquireddate', 'a.aquireddate',
 		'aquireddate.from', 'aquireddate.to',
-				'completeddate', 'a.`completeddate`',
+				'completeddate', 'a.completeddate',
 		'completeddate.from', 'completeddate.to',
-				'hash', 'a.`hash`',
+				'hash', 'a.hash',
 			);
 		}
 
@@ -87,7 +87,7 @@ class PropertyrecordsModel extends ListModel
 	protected function populateState($ordering = null, $direction = null)
 	{
         // List state information.
-        parent::populateState('id', 'DESC');
+        parent::populateState('completeddate', 'DESC');
 
         $context = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
         $this->setState('filter.search', $context);
@@ -231,7 +231,7 @@ class PropertyrecordsModel extends ListModel
 			$query->where("a.`completeddate` <= '".$db->escape($filter_completeddate_to)."'");
 		}
 		// Add the list ordering clause.
-		$orderCol  = $this->state->get('list.ordering', 'id');
+		$orderCol  = $this->state->get('list.ordering', 'completeddate');
 		$orderDirn = $this->state->get('list.direction', 'DESC');
 
 		if ($orderCol && $orderDirn)
