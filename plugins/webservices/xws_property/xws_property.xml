@@ -2,7 +2,7 @@
 <extension version="4.0" type="plugin" group="webservices">
     <name>plg_webservices_xws_property</name>
     <author>Tony Partridge</author>
-    <creationDate>2021-08-02</creationDate>
+    <creationDate>2021-08-06</creationDate>
     <copyright>2021 Tony Partridge - Xtech Web Services Ltd</copyright>
     <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
     <authorEmail>tony@xws.im</authorEmail>

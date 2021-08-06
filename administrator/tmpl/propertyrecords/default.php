@@ -66,42 +66,42 @@ if ($saveOrder)
 						</th>
 						<?php if (isset($this->items[0]->state)): ?>
 							<th width="1%" class="nowrap center">
-								<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.`state`', $listDirn, $listOrder); ?>
+								<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
 </th>
 						<?php endif; ?>
 
 										<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'JGLOBAL_FIELD_ID_LABEL', 'a.`id`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'JGLOBAL_FIELD_ID_LABEL', 'a.id', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_HOUSENO', 'a.`houseno`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_HOUSENO', 'a.houseno', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_HOUSENAME', 'a.`housename`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_HOUSENAME', 'a.housename', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_STREETNAME', 'a.`streetname`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_STREETNAME', 'a.streetname', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_STREETNAME2', 'a.`streetname2`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_STREETNAME2', 'a.streetname2', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_TOWN', 'a.`town`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_TOWN', 'a.town', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_POSTCODE', 'a.`postcode`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_POSTCODE', 'a.postcode', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_MARKETVALUE', 'a.`marketvalue`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_MARKETVALUE', 'a.marketvalue', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_SALEPRICE', 'a.`saleprice`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_SALEPRICE', 'a.saleprice', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_AQUIREDDATE', 'a.`aquireddate`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_AQUIREDDATE', 'a.aquireddate', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_COMPLETEDDATE', 'a.`completeddate`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_PROPERTYRECORDS_COMPLETEDDATE', 'a.completeddate', $listDirn, $listOrder); ?>
 				</th>
 
 						
