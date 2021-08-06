@@ -41,12 +41,12 @@ class ParishesModel extends ListModel
 		if (empty($config['filter_fields']))
 		{
 			$config['filter_fields'] = array(
-				'id', 'a.`id`',
-				'ordering', 'a.`ordering`',
-				'state', 'a.`state`',
-				'created_by', 'a.`created_by`',
-				'modified_by', 'a.`modified_by`',
-				'name', 'a.`name`',
+				'id', 'a.id',
+				'ordering', 'a.ordering',
+				'state', 'a.state',
+				'created_by', 'a.created_by',
+				'modified_by', 'a.modified_by',
+				'name', 'a.name',
 			);
 		}
 

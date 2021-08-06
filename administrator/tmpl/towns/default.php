@@ -66,15 +66,15 @@ if ($saveOrder)
 						</th>
 						<?php if (isset($this->items[0]->state)): ?>
 							<th width="1%" class="nowrap center">
-								<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.`state`', $listDirn, $listOrder); ?>
+								<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
 </th>
 						<?php endif; ?>
 
 										<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'JGLOBAL_FIELD_ID_LABEL', 'a.`id`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'JGLOBAL_FIELD_ID_LABEL', 'a.id', $listDirn, $listOrder); ?>
 				</th>
 				<th class='left'>
-				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_TOWNS_NAME', 'a.`name`', $listDirn, $listOrder); ?>
+				<?php echo HTMLHelper::_('searchtools.sort',  'COM_XWS_PROPERTY_TOWNS_NAME', 'a.name', $listDirn, $listOrder); ?>
 				</th>
 
 						
