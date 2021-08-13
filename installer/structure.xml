@@ -40,5 +40,7 @@
     <field field_name="aquireddate" field_type="DATETIME" description=""/>
     <field action="add" field_name="completeddate" field_type="DATETIME" description=""/>
     <field field_name="hash" field_type="VARCHAR" field_length="255" description=""/>
+    <field field_name="soldformore" field_type="TINYINT" field_length="1" description=""/>
+    <field field_name="soldforless" field_type="TINYINT" field_length="1" description=""/>
   </table>
 </component>

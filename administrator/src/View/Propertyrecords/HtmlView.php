@@ -176,6 +176,8 @@ class HtmlView extends BaseHtmlView
 			'a.`saleprice`' => Text::_('COM_XWS_PROPERTY_PROPERTYRECORDS_SALEPRICE'),
 			'a.`aquireddate`' => Text::_('COM_XWS_PROPERTY_PROPERTYRECORDS_AQUIREDDATE'),
 			'a.`completeddate`' => Text::_('COM_XWS_PROPERTY_PROPERTYRECORDS_COMPLETEDDATE'),
+			'a.`soldformore`' => Text::_('COM_XWS_PROPERTY_PROPERTYRECORDS_SOLDFORMORE'),
+			'a.`soldforless`' => Text::_('COM_XWS_PROPERTY_PROPERTYRECORDS_SOLDFORLESS'),
 		);
 	}
 

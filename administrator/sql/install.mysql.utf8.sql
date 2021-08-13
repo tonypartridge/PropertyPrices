@@ -19,6 +19,8 @@ CREATE TABLE IF NOT EXISTS `#__xws_property_records` (
 `aquireddate` DATETIME NULL  DEFAULT NULL ,
 `completeddate` DATETIME NULL  DEFAULT NULL ,
 `hash` VARCHAR(255)  NOT NULL ,
+`soldformore` TINYINT(1)  NULL  DEFAULT 0,
+`soldforless` TINYINT(1)  NULL  DEFAULT 0,
 PRIMARY KEY (`id`)
 ) DEFAULT COLLATE=utf8mb4_unicode_ci;
 

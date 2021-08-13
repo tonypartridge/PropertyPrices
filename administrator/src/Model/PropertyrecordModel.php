@@ -269,4 +269,30 @@ class PropertyrecordModel extends AdminModel
 			}
 		}
 	}
+
+	/**
+	 * Save any changes on toggle button clicked on list view
+	 *
+	 * @param   int     $pk     Primary key of the item
+	 *
+	 * @param   string  $field  Name of the field to toggle
+	 *
+	 * @return bool
+	 */
+	public function toggle($pk, $field)
+	{
+		$result = false;
+
+		// Obtain item data
+		$item = $this->getItem($pk);
+
+		if ($item)
+		{
+			$data         = get_object_vars($item);
+			$data[$field] = ($item->$field == 1) ? 0 : 1;
+			$result       = $this->save($data);
+		}
+
+		return $result;
+	}
 }

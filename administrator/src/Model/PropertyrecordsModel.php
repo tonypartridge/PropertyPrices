@@ -60,6 +60,8 @@ class PropertyrecordsModel extends ListModel
 				'completeddate', 'a.completeddate',
 		'completeddate.from', 'completeddate.to',
 				'hash', 'a.hash',
+				'soldformore', 'a.soldformore',
+				'soldforless', 'a.soldforless',
 			);
 		}
 
@@ -229,6 +231,22 @@ class PropertyrecordsModel extends ListModel
 		if ($filter_completeddate_to !== null  && !empty($filter_completeddate_to))
 		{
 			$query->where("a.`completeddate` <= '".$db->escape($filter_completeddate_to)."'");
+		}
+
+		// Filtering soldformore
+		$filter_soldformore = $this->state->get("filter.soldformore");
+
+		if ($filter_soldformore !== null && (is_numeric($filter_soldformore) || !empty($filter_soldformore)))
+		{
+			$query->where("a.`soldformore` = '".$db->escape($filter_soldformore)."'");
+		}
+
+		// Filtering soldforless
+		$filter_soldforless = $this->state->get("filter.soldforless");
+
+		if ($filter_soldforless !== null && (is_numeric($filter_soldforless) || !empty($filter_soldforless)))
+		{
+			$query->where("a.`soldforless` = '".$db->escape($filter_soldforless)."'");
 		}
 		// Add the list ordering clause.
 		$orderCol  = $this->state->get('list.ordering', 'completeddate');
