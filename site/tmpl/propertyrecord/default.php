@@ -80,6 +80,26 @@ use \Joomla\CMS\Session\Session;
 			<td><?php echo $this->item->hash; ?></td>
 		</tr>
 
+		<tr>
+			<th><?php echo Text::_('COM_XWS_PROPERTY_FORM_LBL_PROPERTYRECORD_SOLDFORMORE'); ?></th>
+			<td>
+					<?php if (!empty($this->item->soldformore)): ?>
+						<?php echo Text::_('JYES'); ?>
+					<?php else: ?>
+						<?php echo Text::_('JNO'); ?>
+					<?php endif; ?></td>
+		</tr>
+
+		<tr>
+			<th><?php echo Text::_('COM_XWS_PROPERTY_FORM_LBL_PROPERTYRECORD_SOLDFORLESS'); ?></th>
+			<td>
+					<?php if (!empty($this->item->soldforless)): ?>
+						<?php echo Text::_('JYES'); ?>
+					<?php else: ?>
+						<?php echo Text::_('JNO'); ?>
+					<?php endif; ?></td>
+		</tr>
+
 	</table>
 
 </div>

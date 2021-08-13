@@ -114,4 +114,38 @@ class PropertyrecordsController extends AdminController
 		// Close the application
 		Factory::getApplication()->close();
 	}
+
+	/**
+	 * Method to toggle fields on a list
+	 *
+	 * @throws Exception
+	 */
+	public function toggle()
+	{
+		// Initialise variables
+		$app    = Factory::getApplication();
+		$ids    = $app->input->get('cid', array(), '', 'array');
+		$field  = $app->input->get('field');
+
+		if (empty($ids))
+		{
+			$app->enqueueMessage('warning', Text::_('JERROR_NO_ITEMS_SELECTED'));
+		}
+		else
+		{
+			// Get the model
+			$model = $this->getModel('propertyrecord');
+
+			foreach ($ids as $pk)
+			{
+				// Toggle the items
+				if (!$model->toggle($pk, $field))
+				{
+					throw new \Exception($model->getError(), 500);
+				}
+			}
+		}
+
+	$this->setRedirect(Route::_('index.php?option=' . $app->input->get('option') . '&view=' . $app->input->get('view'), false));
+	}
 }

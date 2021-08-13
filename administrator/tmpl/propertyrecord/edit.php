@@ -46,6 +46,8 @@ HTMLHelper::_('bootstrap.tooltip');
 				<?php echo $this->form->renderField('aquireddate'); ?>
 				<?php echo $this->form->renderField('completeddate'); ?>
 				<?php echo $this->form->renderField('hash'); ?>
+				<?php echo $this->form->renderField('soldformore'); ?>
+				<?php echo $this->form->renderField('soldforless'); ?>
 			</fieldset>
 		</div>
 	</div>

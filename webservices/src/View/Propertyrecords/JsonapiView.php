@@ -40,6 +40,8 @@ class JsonApiView extends BaseApiView
 		'saleprice', 
 		'aquireddate', 
 		'completeddate', 
+		'soldformore', 
+		'soldforless', 
 	];
 
 	/**
@@ -62,5 +64,7 @@ class JsonApiView extends BaseApiView
 		'saleprice', 
 		'aquireddate', 
 		'completeddate', 
+		'soldformore', 
+		'soldforless', 
 	];
 }
