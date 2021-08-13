@@ -33,7 +33,7 @@ $userId    = $user->get('id');
 $listOrder = $this->state->get('list.ordering');
 $listDirn  = $this->state->get('list.direction');
 $canOrder  = $user->authorise('core.edit.state', 'com_xws_property');
-$saveOrder = $listOrder == 'a.`ordering`';
+$saveOrder = $listOrder == 'a.ordering';
 
 if ($saveOrder)
 {
@@ -55,15 +55,15 @@ if ($saveOrder)
 				<table class="table table-striped" id="townList">
 					<thead>
 					<tr>
-						<?php if (isset($this->items[0]->ordering)): ?>
-							<th width="1%" class="nowrap center hidden-phone">
-	                            <?php echo HTMLHelper::_('searchtools.sort', '', 'a.`ordering`', $listDirn, $listOrder, null, 'asc', 'JGRID_HEADING_ORDERING', 'icon-menu-2'); ?>
-	                        </th>
-						<?php endif; ?>
 						<th width="1%" >
 							<input type="checkbox" name="checkall-toggle" value=""
 								   title="<?php echo Text::_('JGLOBAL_CHECK_ALL'); ?>" onclick="Joomla.checkAll(this)"/>
 						</th>
+						<?php if (isset($this->items[0]->ordering)): ?>
+							<th width="1%" class="nowrap center hidden-phone">
+	                            <?php echo HTMLHelper::_('searchtools.sort', '', 'a.ordering', $listDirn, $listOrder, null, 'asc', 'JGRID_HEADING_ORDERING', 'icon-menu-2'); ?>
+	                        </th>
+						<?php endif; ?>
 						<?php if (isset($this->items[0]->state)): ?>
 							<th width="1%" class="nowrap center">
 								<?php echo HTMLHelper::_('searchtools.sort', 'JSTATUS', 'a.state', $listDirn, $listOrder); ?>
@@ -97,32 +97,32 @@ if ($saveOrder)
 						?>
 						<tr class="row<?php echo $i % 2; ?>">
 
-							<?php if (isset($this->items[0]->ordering)) : ?>
-							<td class="order nowrap center hidden-phone">
-							<?php if ($canChange) :
-								$disableClassName = '';
-								$disabledLabel    = '';
-
-								if (!$saveOrder) :
-									$disabledLabel    = Text::_('JORDERINGDISABLED');
-									$disableClassName = 'inactive tip-top';
-								endif; ?>
-								<span class="sortable-handler hasTooltip <?php echo $disableClassName ?>"
-									  title="<?php echo $disabledLabel ?>">
-									<i class="icon-menu"></i>
-								</span>
-								<input type="text" style="display:none" name="order[]" size="5"
-									   value="<?php echo $item->ordering; ?>" class="width-20 text-area-order "/>
-							<?php else : ?>
-								<span class="sortable-handler inactive">
-									<i class="icon-menu"></i>
-								</span>
-							<?php endif; ?>
-							</td>
-							<?php endif; ?>
+							
 							<td >
 								<?php echo HTMLHelper::_('grid.id', $i, $item->id); ?>
 							</td>
+
+							<?php if (isset($this->items[0]->ordering)) : ?>
+							<td class="order nowrap center hidden-phone">
+							<?php
+								$iconClass = '';
+								if (!$canChange)
+								{
+									$iconClass = ' inactive';
+								}
+								elseif (!$saveOrder)
+								{
+									$iconClass = ' inactive" title="' . Text::_('JORDERINGDISABLED');
+								}
+							?>
+							<span class="sortable-handler<?php echo $iconClass ?>">
+								<span class="icon-ellipsis-v" aria-hidden="true"></span>
+							</span>
+							<?php if ($canChange && $saveOrder) : ?>
+								<input type="text" name="order[]" size="5" value="<?php echo $item->ordering; ?>" class="width-20 text-area-order hidden">
+							<?php endif; ?>
+							</td>
+							<?php endif; ?>
 							<?php if (isset($this->items[0]->state)): ?>
 								<td class="center">
 								<?php echo HTMLHelper::_('jgrid.published', $item->state, $i, 'towns.', $canChange, 'cb'); ?>

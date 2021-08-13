@@ -82,47 +82,26 @@ class PropertyrecordsModel extends ListModel
 	 */
 	protected function populateState($ordering = null, $direction = null)
 	{
-		$app  = Factory::getApplication();
-            
-		$list = $app->getUserState($this->context . '.list');
+		// List state information.
+        parent::populateState('a.completeddate', 'DESC');
 
-		$ordering  = isset($list['filter_order'])     ? $list['filter_order']     : null;
-		$direction = isset($list['filter_order_Dir']) ? $list['filter_order_Dir'] : null;
-		if(empty($ordering)){
-		$ordering = $app->getUserStateFromRequest($this->context . '.filter_order', 'filter_order', $app->get('filter_order'));
-		if (!in_array($ordering, $this->filter_fields))
-		{
-		$ordering = 'id';
-		}
-		$this->setState('list.ordering', $ordering);
-		}
-		if(empty($direction))
-		{
-		$direction = $app->getUserStateFromRequest($this->context . '.filter_order_Dir', 'filter_order_Dir', $app->get('filter_order_Dir'));
-		if (!in_array(strtoupper($direction), array('ASC', 'DESC', '')))
-		{
-		$direction = 'DESC';
-		}
-		$this->setState('list.direction', $direction);
-		}
+        $app = Factory::getApplication();
+        $list = $app->getUserState($this->context . '.list');
 
-		$list['limit']     = $app->getUserStateFromRequest($this->context . '.list.limit', 'limit', $app->get('list_limit'), 'uint');
-		$list['start']     = $app->input->getInt('start', 0);
-		$list['ordering']  = $ordering;
-		$list['direction'] = $direction;
+        $ordering  = $app->input->get('filter_order', 'a.completeddate');
+        $direction = strtoupper($app->input->get('filter_order_Dir', 'DESC'));
+        
+        if(!empty($ordering) || !empty($direction))
+        {
+        	$list['fullordering'] = $ordering . ' ' . $direction;
+        }
 
-		$app->setUserState($this->context . '.list', $list);
-		$app->input->set('list', null);
-           
-            
-        // List state information.
+        $app->setUserState($this->context . '.list', $list);
 
-        parent::populateState($ordering, $direction);
+        
 
         $context = $this->getUserStateFromRequest($this->context.'.filter.search', 'filter_search');
         $this->setState('filter.search', $context);
-
-        
 
         // Split context into component and optional section
         $parts = FieldsHelper::extract($context);
@@ -229,7 +208,7 @@ class PropertyrecordsModel extends ListModel
             
             
             // Add the list ordering clause.
-            $orderCol  = $this->state->get('list.ordering', 'id');
+            $orderCol  = $this->state->get('list.ordering', 'a.completeddate');
             $orderDirn = $this->state->get('list.direction', 'DESC');
 
             if ($orderCol && $orderDirn)
